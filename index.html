@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="style.css" media="screen">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<title>Sliding Tile Puzzle</title>
+</head>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Orbitron&Noticia+Text&Archivo+Narrow&Balsamiq+Sans&Iceberg&Play&Michroma&Audiowide&display=swap"
+	rel="stylesheet">
+
+<body>
+	<div class="mainApp">
+		<div class="menu">
+			<div class="w-100 flex-center flex-column" style="margin: 20px auto; text-align: center;">
+				<p>
+					<b>
+						GROUP 7 - 20231IT6043001
+
+					</b>
+				</p>
+			</div>
+			<ul>
+				<li>
+					<a href="../index.html">
+						<i class="fa-solid fa-border-all" style="margin-right: 4px;"></i>
+						Standard Mode
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fa-solid fa-chess-board" style="margin-right: 4px;"></i>
+						Easy Mode
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="appContent">
+			<h1>A Sliding Puzzle Solver</h1>
+			<div class="flex-center flex-1 flex-column w-100">
+				<div class="container">
+					<div class="grid-container">
+						<div class="grid start">
+						    <div class="row">
+						        <div class="cell" data-pos="0,0"><span class="w-100 h-100 flex-center">1</span></div>
+						        <div class="cell" data-pos="0,1"><span class="w-100 h-100 flex-center">2</span></div>
+						    </div>
+						    <div class="row">
+						        <div class="cell" data-pos="1,0"><span class="w-100 h-100 flex-center">3</span></div>
+						        <div class="cell" data-pos="1,1" id="empty"><span class="w-100 h-100 flex-center"></span></div>
+						    </div>
+						</div>
+
+						<div class="p">Note: You can use either Mouse or Arrow Keys to control tiles</div>
+					</div>
+
+					<div class="solverWrapper">
+						<div class="solver">
+							<button onclick="shuffleTiles()" id="shuffleButton"><i class="fa-solid fa-shuffle"
+									style="margin-right: 4px;"></i> Shuffle</button>
+							<button onclick="start()" id="solveButton"><i class="fa-solid fa-microchip"
+									style="margin-right: 4px;"></i> Solve</button>
+							<button onclick="showSolution()" id="followStepButton" class="display-none"><i
+									class="fa-solid fa-person-walking-arrow-right" style="margin-right: 4px;"></i>
+								Follow Step</button>
+						</div>
+					</div>
+				</div>
+
+				<div class=" panelWrapper">
+					<h2>Instructions:</h2>
+					<div id="panel"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+	<script src="./Confetti.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.js"
+		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<!-- <script type="text/javascript" src="js/jquery.js"></script> -->
+	<script src="https://cdn.jsdelivr.net/npm/js-priority-queue@0.1.5/priority-queue.min.js"></script>
+	<script type="text/javascript" src="js/hashset.js"></script>
+	<script type="text/javascript" src="js/hashtable.js"></script>
+
+	<script type="text/javascript" src="index.js"></script>
+
+	<script>
+		shuffleTiles();
+	</script>
+</body>
+
+</html>
